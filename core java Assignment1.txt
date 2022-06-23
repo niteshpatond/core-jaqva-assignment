@@ -1,0 +1,239 @@
+Q1. 
+
+   import java.util.Scanner;
+public class ArmStrongNum {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter the Number : ");
+int num = sc.nextInt(); //153
+int temp = num; //153
+int rem = 0 ; 
+int rev = 0 ;
+while(temp != 0) { 
+rem = temp % 10 ; //3 5 1
+temp = temp / 10 ; //15 1 0
+rev = rev +(rem*rem*rem); //0+27 , 27+125, 152+1
+}//terminate
+System.out.println(rev);
+if(rev == num) {
+System.out.println("Number is Armstrong Number..");
+}
+else {
+System.out.println("Number is Not Armstrong..");
+}
+}
+}
+.............................................................................
+Q2.  
+
+public class Armstrong
+{
+             public static void main (String [] args)
+             {
+                   //Program to find armstrong number from 100 to 999
+                   //153, 370, 371, 407
+
+                    for (int k = 100 ; k <= 1000 ; k++)
+                     {
+                                int n = k;
+                                int d = 0;
+                                int s = 0;
+
+                                while (n > 0)
+                                 {
+                                             d = n % 10;
+                                             s = s + (d * d * d);
+                                             n = n / 10;
+                                 }
+                                 if (k == s)
+                                  {
+                                             System.out.println (k + ” is Armstrong number”);
+                                   }
+                      }
+            } // main method
+} // Armstrong class
+
+...............................................................
+Q3.
+
+
+package assignment;
+
+import java.util.Scanner;
+
+public class compoundinterest {
+	public static void main(String []args) {
+		 int principal,time,compoundinterest;
+		 double amount,rate,ci;
+		 Scanner st= new Scanner (System.in);
+		  System.out.print("Enter the principal amount : ");
+		 principal=st.nextInt();
+		   System.out.print("Enter the rate of Interest : ");
+		  rate=st.nextFloat();
+		 System.out.println("Enter the rate of time in year : ");
+		 time=st.nextInt();
+		 System.out.println("Enter the  type of compund interest  :yeraly/half-yearly");
+		 compoundinterest=st.nextInt();
+		 amount=principal*Math.pow((1+rate/(compoundinterest*100)),(compoundinterest*time));
+	     ci=amount-principal;
+	     System.out.println("The Compound interest is :"+ci);
+		}
+
+}
+................................................................................
+Q8
+
+package CapgeminiTraining.Java.Assignment1;
+
+class BubbleSort {
+
+	public int[] bubbleSort(int arr[]) {
+
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = 0; j < arr.length - 1 - i; j++) {
+				if (arr[j] > arr[j + 1]) {
+
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+		return arr;
+	}
+}
+
+public class Assignment1Q8 {
+	public static void main(String args[]) {
+		int arr[] = { 5, 12, 14, 6, 78, 19, 1, 23, 26, 35, 37, 7, 52, 86, 47 };
+
+		BubbleSort bubbleSort = new BubbleSort();
+
+		int sortedArray[] = bubbleSort.bubbleSort(arr);
+
+		for (int i : sortedArray) {
+			System.out.print(i + " ");
+		}
+	}
+}
+................................................................................................
+Q6.
+
+import java.util.Scanner;
+	public class LoginPage {
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+	        String sp=" ";
+	        System.out.println("Enter the Username");
+	        String uname = sc.nextLine();
+	        if((uname.contains(sp)) || uname.length()<4){
+	            System.out.println("Invalid Username");
+	            return;
+	        }
+
+	        System.out.println("Enter the Password");
+	        String upass = sc.nextLine();
+	        if((upass.contains(sp)) || upass.length()<8){
+	            System.out.println("Invalid Password");
+	            return;
+	        }
+
+	        System.out.println(uname+" you are Registered Successfully");
+
+	        System.out.println("Enter the Username");
+	        String lname = sc.nextLine();
+	        System.out.println("Enter the Password");
+	        String lpass = sc.nextLine();
+
+	        if(uname.equals(lname) && upass.equals(lpass)){
+	            System.out.println("Welcome "+lname+" you have Logged-in Successfully");
+	        }
+	        else{
+	            System.out.println("Username or password Mismatch");
+	        }
+	    }
+	}
+................................................................................
+Q7.
+
+public class Array {
+		  public static void main(String[] args) {
+
+		    int[] num = {5, 12, 14, 6, 78, 19, 1, 23, 26, 35, 37, 7, 52, 86, 47};
+		    int toFind = 20;
+		    boolean found = false;
+
+		    for (int n : num) {
+		      if (n == toFind) {
+		        found = true;
+		        break;
+		      }
+		    }
+		    
+		    if(found)
+		      System.out.println(toFind + " is found.");
+		    else
+		      System.out.println(toFind + " is not found.");
+		  }
+		}
+...........................................................................................
+Q5
+
+import java.util.Scanner;
+
+public class IncomeTax 
+	{
+		public static void main(String args[])
+		{
+		double tax=0,it;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter income ");
+		it=sc.nextDouble();
+		if(it<=180000)
+			tax=0;
+		else if(it<=300000)
+			tax=0.1*(it-200000);
+		else if(it<=500000)
+			tax=(0.2*(it-300000))+(0.1*100000);
+		else if(it<=1000000)
+			tax=(0.3*(it-500000))+(0.2*200000)+(0.1*100000);
+		else
+			tax=(0.4*(it-1000000))+(0.3*500000)+(0.2*200000)+(0.1*100000);
+		System.out.println("Income tax amount is "+tax);
+		}
+	}
+...............................................................................................
+Q9
+
+import java.util.Scanner;
+class Grade
+{
+public static void main(String args[])
+ {
+ float a,b,c,avg;
+Scanner  s=new Scanner(System.in);
+System.out.println("Enter the mark of three subs");
+a=s.nextFloat();
+b=s.nextFloat();
+c=s.nextFloat();
+avg=a+b+c/3;
+if(avg>=80)
+{
+System.out.println("You are in A grade ");
+}
+else if(avg>=60 && avg<=80)
+{
+System.out.println("You are in B grade ");
+}
+else if(avg>=50 && avg<60)
+{
+System.out.println("You are in C grade ");
+}
+else
+{
+System.out.println("Fail ");
+}
+}
+
+}
+..................................................................................
